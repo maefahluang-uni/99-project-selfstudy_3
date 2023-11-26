@@ -452,7 +452,8 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: space-evenly;
 }
-.big-scr{
+
+.big-scr {
     font-size: 100px;
     margin-top: 0%;
     margin-bottom: 0%;
@@ -464,17 +465,18 @@ input::-webkit-inner-spin-button {
     border: transparent;
     border-radius: 10px;
 }
-.big-scr:hover{
+
+.big-scr:hover {
     font-size: 150px;
     width: 30%;
     height: 30%;
     border-radius: 50px;
     transition: 0.5s;
     border: 2px white solid;
-   
+
 }
 
-.Fn-btn{
+.Fn-btn {
     margin-top: 5%;
     padding-top: 2%;
     padding-bottom: 2%;
@@ -488,7 +490,7 @@ input::-webkit-inner-spin-button {
     transition: 0.5s;
 }
 
-.Fn-btn:hover{
+.Fn-btn:hover {
     padding-top: 3%;
     padding-bottom: 3%;
     padding-left: 4%;
@@ -498,4 +500,3 @@ input::-webkit-inner-spin-button {
     color: black;
     border: 2px solid white;
 }
-

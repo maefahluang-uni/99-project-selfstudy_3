@@ -29,11 +29,9 @@ input::-webkit-inner-spin-button {
 .Fade {
   position: absolute;
   background-color: black;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%);
   height: 50%;
   width: 100%;
   top: 50%;
@@ -473,6 +471,7 @@ input::-webkit-inner-spin-button {
   color: white;
   font-size: smaller;
 }
+
 .Question-container .PerOneQuestion .questionDetail {
   display: flex;
   color: white;
@@ -497,7 +496,7 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
-.choice input.thisisradio ~ .radiomark {
+.choice input.thisisradio~.radiomark {
   cursor: pointer;
   margin-left: 2%;
   height: 20px;
@@ -508,7 +507,7 @@ input::-webkit-inner-spin-button {
   transition: 0.2s;
 }
 
-.choice input.thisisradio:checked ~ .radiomark {
+.choice input.thisisradio:checked~.radiomark {
   cursor: pointer;
   margin-left: 2%;
   height: 16px;
@@ -537,6 +536,7 @@ input::-webkit-inner-spin-button {
   height: 100%;
   width: 100%;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #01776b;
   transition: 0.8s;
@@ -590,7 +590,7 @@ input::-webkit-inner-spin-button {
   border: 1px solid white;
 }
 
-.below-btn-container{
+.below-btn-container {
   justify-content: space-evenly;
   display: flex;
 }

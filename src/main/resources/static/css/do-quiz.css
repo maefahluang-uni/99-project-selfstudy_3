@@ -29,11 +29,9 @@ input::-webkit-inner-spin-button {
 .Fade {
   position: absolute;
   background-color: black;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.6) 100%);
   height: 50%;
   width: 100%;
   top: 50%;
@@ -473,6 +471,7 @@ input::-webkit-inner-spin-button {
   color: white;
   font-size: smaller;
 }
+
 .Question-container .PerOneQuestion .questionDetail {
   display: flex;
   color: white;
@@ -497,7 +496,7 @@ input::-webkit-inner-spin-button {
   display: none;
 }
 
-.choice input.thisisradio ~ .radiomark {
+.choice input.thisisradio~.radiomark {
   cursor: pointer;
   margin-left: 2%;
   height: 20px;
@@ -508,7 +507,7 @@ input::-webkit-inner-spin-button {
   transition: 0.2s;
 }
 
-.choice input.thisisradio:checked ~ .radiomark {
+.choice input.thisisradio:checked~.radiomark {
   cursor: pointer;
   margin-left: 2%;
   height: 16px;
@@ -537,6 +536,7 @@ input::-webkit-inner-spin-button {
   height: 100%;
   width: 100%;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #01776b;
   transition: 0.8s;
@@ -591,31 +591,31 @@ input::-webkit-inner-spin-button {
   border: 1px solid white;
 }
 
-.below-btn-container{
+.below-btn-container {
   justify-content: space-evenly;
   display: flex;
 }
 
 
-.cr-ans-ctn h5{
+.cr-ans-ctn h5 {
   margin: 5px;
 }
 
-.cr-ans-ctn{
+.cr-ans-ctn {
   display: flex;
 }
 
-.Topper-content{
+.Topper-content {
   width: 100%;
   display: flex;
 }
 
-.Topper-content-left{
+.Topper-content-left {
   width: 80%;
 }
 
 
-.delete-btn{
+.delete-btn {
   padding: 10%;
   color: white;
   border-radius: 10px;
@@ -626,7 +626,7 @@ input::-webkit-inner-spin-button {
   margin: 2%;
 }
 
-.edit-btn{
+.edit-btn {
   margin: 5%;
   padding: 10%;
   padding-left: 21%;
@@ -639,31 +639,32 @@ input::-webkit-inner-spin-button {
   transition: 0.2s;
 }
 
-.delete-btn:hover{
+.delete-btn:hover {
 
   background-color: red;
   transition: 0.2s;
 
 }
 
-.edit-btn:hover{
+.edit-btn:hover {
 
   background-color: #01776b;
   transition: 0.2s;
 }
 
-.qiz-tpc{
+.qiz-tpc {
   margin-bottom: 0%;
 }
 
-.btn-container{
-  margin:0%;
+.btn-container {
+  margin: 0%;
   display: flex;
   justify-content: right;
   margin-right: 5%;
 
 }
-.delete-all-btn{
+
+.delete-all-btn {
   margin: 1%;
   padding: 1.5%;
   padding-left: 3%;
@@ -676,12 +677,12 @@ input::-webkit-inner-spin-button {
   transition: 0.2s;
 }
 
-.do-quiz-btn{
+.do-quiz-btn {
   margin: 1%;
   padding: 1.5%;
   padding-left: 3%;
   padding-right: 3%;
-  
+
   border-radius: 10px;
   background-color: transparent;
   border: 1px solid white;
@@ -689,7 +690,7 @@ input::-webkit-inner-spin-button {
   transition: 0.2s;
 }
 
-.do-quiz-btn button{
+.do-quiz-btn button {
   color: white;
   background-color: transparent;
   outline: none;
@@ -697,12 +698,12 @@ input::-webkit-inner-spin-button {
   cursor: pointer;
 }
 
-.delete-all-btn:hover{
+.delete-all-btn:hover {
   background-color: red;
   transition: 0.2s;
 }
 
-.do-quiz-btn:hover{
+.do-quiz-btn:hover {
   background-color: black;
   transition: 0.2s;
 }

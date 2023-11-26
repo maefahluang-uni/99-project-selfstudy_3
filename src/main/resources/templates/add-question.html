@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/add-quiz.css}">
 
-    <title>Study-Smartly</title>
+    <title>Study Smartly</title>
 
 </head>
 
@@ -24,67 +24,78 @@
     <span class="left-panel">
         <nav class="navbar">
             <ul className="nav-list">
-               
-                <li class="nav-item"> 
-                    <a  th:href = "@{/logout}">
+
+                <li class="nav-item">
+                    <a th:href="@{/logout}">
                         <button class="login-button" id="loginButton">Log out</button>
                     </a>
                 </li>
-                
+
             </ul>
         </nav>
     </span>
     <div class="toCenter">
         <div class="OpSqure">
-            <h1 class="WhiteText" th:text = "${topicName}">Quiz topic name </h1>
+            <h1 class="WhiteText" th:text="'Quiz topic: ' + ${topicName}"></h1>
             <div class="Question-container">
 
-                <form class="PerOneQuestion" id="forsubform" th:action="@{/topics/{id}(id=${topic_id})}" th:object="${question}" method="post">
+                <form class="PerOneQuestion" id="forsubform" th:action="@{/topics/{id}(id=${topic_id})}"
+                    th:object="${question}" method="post">
                     <!--
                     <div class="questionNumber">This is Question number.</div>
                     -->
-                    <input class="questionTitle" placeholder="Add question" th:field = "*{questionTitle}" required></input>
+                    <input class="questionTitle" placeholder="Add question" th:field="*{questionTitle}"
+                        required></input>
                     <ul>
                         <!-- class choice is div and input display is none that mean input can't be clicked but still can checked-->
                         <label class="choice">
-                            <input class="thisisradio" type="radio" th:field = "*{correctAnswer}" name="choice" th:value="1">
+                            <input class="thisisradio" type="radio" th:field="*{correctAnswer}" name="choice"
+                                th:value="1">
                             <div class="radiomark"></div>
-                            <input class="choiceinput" type="text" placeholder="choice 1" th:field = "*{choice1}" required>
+                            <input class="choiceinput" type="text" placeholder="choice 1" th:field="*{choice1}"
+                                required>
                         </label>
 
                         <label class="choice">
-                            <input class="thisisradio" type="radio" name="choice" th:field = "*{correctAnswer}" th:value="2">
+                            <input class="thisisradio" type="radio" name="choice" th:field="*{correctAnswer}"
+                                th:value="2">
                             <div class="radiomark"></div>
-                            <input class="choiceinput" type="text" placeholder="choice 2" th:field = "*{choice2}" required>
+                            <input class="choiceinput" type="text" placeholder="choice 2" th:field="*{choice2}"
+                                required>
                         </label>
 
                         <label class="choice">
-                            <input class="thisisradio" type="radio" name="choice" th:field = "*{correctAnswer}" th:value="3">
+                            <input class="thisisradio" type="radio" name="choice" th:field="*{correctAnswer}"
+                                th:value="3">
                             <div class="radiomark"></div>
-                            <input class="choiceinput" type="text" placeholder="choice 3" th:field = "*{choice3}" required>
+                            <input class="choiceinput" type="text" placeholder="choice 3" th:field="*{choice3}"
+                                required>
                         </label>
 
                         <label class="choice">
-                            <input class="thisisradio" type="radio" name="choice" th:field = "*{correctAnswer}" th:value="4">
+                            <input class="thisisradio" type="radio" name="choice" th:field="*{correctAnswer}"
+                                th:value="4">
                             <div class="radiomark"></div>
-                            <input class="choiceinput" type="text" placeholder="choice 4" th:field = "*{choice4}" required>
+                            <input class="choiceinput" type="text" placeholder="choice 4" th:field="*{choice4}"
+                                required>
                         </label>
 
 
 
                     </ul>
-                    
+
                     <div class="below-btn-container">
                         <!-- <button id="alertsubconsole" class="submit-btn" type="submit" onclick="justSubmitIT('forsubform')">Submit</button> -->
                         <button id="alertsubconsole" class="submit-btn" type="submit">Submit</button>
-                        <a class="WhiteText submit-btn" style="text-decoration: none;" th:href="@{/topics/{id}(id=${topic_id})}">Back</a>
+                        <a class="WhiteText submit-btn" style="text-decoration: none;"
+                            th:href="@{/topics/{id}(id=${topic_id})}">Back</a>
                 </form>
 
             </div>
-            
-        </div>
 
         </div>
+
+    </div>
 
 
     </div>
@@ -104,7 +115,8 @@
                 <h2 id="SongName">Welcome School lofi mix</h2>
                 <p class="owner" id="OwnName">Blue Archive</p>
                 <audio id="audio">
-                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg" allow="autoplay">
+                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg"
+                        allow="autoplay">
                 </audio>
                 <div class="audioProcess">
                     <div class="Processin" id="musicprocess"></div>
@@ -128,32 +140,32 @@
                     <li class="list ">
                         <div class="Changer"></div>
                         <a th:href="@{/}">
-                            
+
                             <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
                         </a>
                     </li>
-                    
+
                     <li class="list">
                         <div class="Changer"></div>
-                        <a th:href ="@{/todolists}">
-                        
-                        <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
+                        <a th:href="@{/todolists}">
+
+                            <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
                         </a>
 
                     </li>
                     <li class="list active">
                         <div class="Changer"></div>
-                        <a th:href ="@{/topics}">
-                        
-                        <img type="หน้าQuiz" th:src="@{/media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
+                        <a th:href="@{/topics}">
+
+                            <img type="หน้าQuiz" th:src="@{/media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
                         </a>
                     </li>
                     <li class="list">
                         <div class="Changer"></div>
                         <a th:href="@{/history}">
-                        
-                        <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
-                    </a>
+
+                            <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
+                        </a>
                     </li>
 
                 </ul>

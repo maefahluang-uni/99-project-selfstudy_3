@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/Quizeditstyle.css}">
-    <title>This is Quiz</title>
+    <title>Study Smartly</title>
 
 </head>
 
@@ -16,7 +16,7 @@
 
         <canvas id="rainCanvas"></canvas>
         <audio id="rainSound" loop>
-            <source th:src="@{media/audio/578599__auwenngebleau__slow-rain.m4a}" type="audio/mp3">
+            <source th:src="@{/media/audio/578599__auwenngebleau__slow-rain.m4a}" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
@@ -24,7 +24,7 @@
         <nav class="navbar">
             <ul className="nav-list">
                 <li class="nav-item">
-                    <a  th:href = "@{/logout}">
+                    <a th:href="@{/logout}">
                         <button class="login-button" id="loginButton">Log out</button>
                     </a>
                 </li>
@@ -40,23 +40,26 @@
                         <div class="forslide">
                             <li class="quiz-topic" th:each="topic : ${topics}">
                                 <div class="quiz-name-set">
-                                    <a href="#" th:href="@{/topics/delete/{id}/(id=${topic.id})}"><button class="quiz-delete-btn" >Delete</button></a>
+                                    <a href="#" th:href="@{/topics/delete/{id}/(id=${topic.id})}"><button
+                                            class="quiz-delete-btn">Delete</button></a>
                                 </div>
-                                <a class="NamedTopic" th:href="@{'/topics/' + ${topic.id}}" th:text = "${topic.Topic_Name}"></a>
+                                <a class="NamedTopic" th:href="@{'/topics/' + ${topic.id}}"
+                                    th:text="${topic.Topic_Name}"></a>
                                 <div class="quiz-name-set">
-                                    <a th:href="@{/topics/{id}/edit(id=${topic.id})}"><button class="quiz-edit-btn" id="editNamedTopic" >Edit</button></a>
+                                    <a th:href="@{/topics/{id}/edit(id=${topic.id})}"><button class="quiz-edit-btn"
+                                            id="editNamedTopic">Edit</button></a>
                                 </div>
                             </li>
                         </div>
                     </div>
                     <a th:href="@{/topics/add}"><button class="btn-new-topic" id="addTopic">New topic</button></a>
                 </div>
-                
-                    <div class="Descripbox" id="hovereddisplay">This is detail</div>
-                    
-                </div>
+
+                <div class="Descripbox" id="hovereddisplay">This is detail</div>
+
             </div>
         </div>
+    </div>
 
 
     </div>
@@ -76,7 +79,8 @@
                 <h2 id="SongName">Welcome School lofi mix</h2>
                 <p class="owner" id="OwnName">Blue Archive</p>
                 <audio id="audio">
-                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg" allow="autoplay">
+                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg"
+                        allow="autoplay">
                 </audio>
                 <div class="audioProcess">
                     <div class="Processin" id="musicprocess"></div>
@@ -100,32 +104,32 @@
                     <li class="list ">
                         <div class="Changer"></div>
                         <a th:href="@{/}">
-                            
-                            <img type="หน้าเดิม" th:src="@{media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
+
+                            <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
                         </a>
                     </li>
-                    
+
                     <li class="list">
                         <div class="Changer"></div>
-                        <a th:href ="@{/todolists}">
-                        
-                        <img type="หน้าTodo" th:src="@{media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
+                        <a th:href="@{/todolists}">
+
+                            <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
                         </a>
 
                     </li>
                     <li class="list active">
                         <div class="Changer"></div>
-                        <a th:href ="@{/topics}">
-                        
-                        <img type="หน้าQuiz" th:src="@{media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
+                        <a th:href="@{/topics}">
+
+                            <img type="หน้าQuiz" th:src="@{/media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
                         </a>
                     </li>
                     <li class="list">
                         <div class="Changer"></div>
                         <a th:href="@{/history}">
-                        
-                        <img type="หน้าStat" th:src="@{media/ico/WhiteStat.png}" id="StatPage" draggable="false">
-                    </a>
+
+                            <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
+                        </a>
                     </li>
 
                 </ul>
@@ -143,13 +147,13 @@
             <ul>
                 <li>
                     <span class="icon" onclick="toggleRain()">
-                        <img th:src="@{media/ico/animation-on.png}" id="Anima" draggable="false">
+                        <img th:src="@{/media/ico/animation-on.png}" id="Anima" draggable="false">
 
                     </span>
                 </li>
                 <li>
                     <span class="icon" id="audioa">
-                        <img th:src="@{media/ico/audio-off.png}" id="audioimg" draggable="false">
+                        <img th:src="@{/media/ico/audio-off.png}" id="audioimg" draggable="false">
                     </span>
 
                 </li>

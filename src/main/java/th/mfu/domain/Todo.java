@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Todo {
 
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private Long Todo_ID;
@@ -24,7 +24,8 @@ public class Todo {
     private String Due_Time;
     private String Description;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
+    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH,
+            CascadeType.PERSIST })
     private User user;
 
     public Date getStart_Date() {
@@ -91,6 +92,4 @@ public class Todo {
         this.user = user;
     }
 
-    
-    
 }

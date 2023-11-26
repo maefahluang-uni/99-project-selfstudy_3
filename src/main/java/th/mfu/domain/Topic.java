@@ -17,7 +17,8 @@ public class Topic {
     private Long id;
     private String Topic_Name;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
+    @ManyToOne(fetch = FetchType.LAZY, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH,
+            CascadeType.PERSIST })
     private User user;
 
     public Long getId() {
@@ -44,5 +45,4 @@ public class Topic {
         Topic_Name = topic_Name;
     }
 
-    
 }

@@ -1,10 +1,10 @@
-var consolealert = document.getElementById('alertsubconsole');
+var consolealert = document.getElementById("alertsubconsole");
 
-function justSubmitIT(FormID){
-    var formid = document.getElementById(FormID);
-    formid.submit();
+function justSubmitIT(FormID) {
+  var formid = document.getElementById(FormID);
+  formid.submit();
 }
 
-consolealert.addEventListener('onsubmit', function(){
-    console.log("Form submitted!");
+consolealert.addEventListener("onsubmit", function () {
+  console.log("Form submitted!");
 });

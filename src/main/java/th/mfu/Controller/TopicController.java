@@ -1,6 +1,5 @@
 package th.mfu.Controller;
 
-
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,9 +41,9 @@ public class TopicController {
 
     // @GetMapping("/topics/{id}")
     // public String listConcerts(Model model, @PathVariable long id) {
-    //     Topic topic = TopicRepo.findById(id).orElse(null);
-    //     model.addAttribute("topic_view", topic);
-    //     return "view-topic";
+    // Topic topic = TopicRepo.findById(id).orElse(null);
+    // model.addAttribute("topic_view", topic);
+    // return "view-topic";
     // }
 
     @GetMapping("/topics/add")
@@ -93,5 +92,6 @@ public class TopicController {
     public String deleteConcert(@PathVariable long id) {
         questionRepo.deleteAllByTopicid(id);
         TopicRepo.deleteById(id);
-        return "redirect:/topics";}
+        return "redirect:/topics";
+    }
 }

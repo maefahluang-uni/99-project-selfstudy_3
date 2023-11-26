@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/do-quiz.css}">
 
-    <title>Quiz</title>
+    <title>Study Smartly</title>
 
 </head>
 
@@ -25,7 +25,7 @@
         <nav class="navbar">
             <ul className="nav-list">
                 <li class="nav-item">
-                    <a  th:href = "@{/logout}">
+                    <a th:href="@{/logout}">
                         <button class="login-button" id="loginButton">Log out</button>
                     </a>
                 </li>
@@ -35,7 +35,7 @@
     <div class="toCenter">
         <div class="OpSqure">
             <h1 class="WhiteText">View Quiz</h1>
-        <form class="Question-container">
+            <form class="Question-container">
 
                 <div class="PerOneQuestion" action="">
                     <div class="questionNumber">This is Question number.</div>
@@ -45,17 +45,17 @@
                         <div class="choice-view">
                             <p>This is choice question.</p>
                             <input class="questioncheckbox" type="checkbox">
-                            <div class="showncheck-view"></div>  
+                            <div class="showncheck-view"></div>
                         </div>
-                       
-                        
+
+
                     </ul>
-                    
-                </div>  
+
+                </div>
             </form>
             <!--Back to main page for quiz-->
             <a class="back-btn WhiteText" href="#">Back</a>
-        
+
 
 
 
@@ -78,9 +78,10 @@
             <div class="musicinfo WhiteText">
                 <p class="Nowplay">Now playing</p>
                 <h2 id="SongName">Welcome School lofi mix</h2>
-                <p class="owner" id="OwnName" >Blue Archive</p>
+                <p class="owner" id="OwnName">Blue Archive</p>
                 <audio id="audio">
-                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg" allow="autoplay">
+                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg"
+                        allow="autoplay">
                 </audio>
                 <div class="audioProcess">
                     <div class="Processin" id="musicprocess"></div>
@@ -104,32 +105,32 @@
                     <li class="list ">
                         <div class="Changer"></div>
                         <a th:href="@{/}">
-                            
-                            <img type="หน้าเดิม" th:src="@{media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
+
+                            <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
                         </a>
                     </li>
-                    
+
                     <li class="list">
                         <div class="Changer"></div>
-                        <a th:href ="@{/todolists}">
-                        
-                        <img type="หน้าTodo" th:src="@{media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
+                        <a th:href="@{/todolists}">
+
+                            <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
                         </a>
 
                     </li>
                     <li class="list active">
                         <div class="Changer"></div>
-                        <a th:href ="@{/topics}">
-                        
-                        <img type="หน้าQuiz" th:src="@{media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
+                        <a th:href="@{/topics}">
+
+                            <img type="หน้าQuiz" th:src="@{/media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
                         </a>
                     </li>
                     <li class="list">
                         <div class="Changer"></div>
                         <a th:href="@{/history}">
-                        
-                        <img type="หน้าStat" th:src="@{media/ico/WhiteStat.png}" id="StatPage" draggable="false">
-                    </a>
+
+                            <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
+                        </a>
                     </li>
 
                 </ul>

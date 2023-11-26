@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
 
     <title>Study Smartly</title>
 
@@ -17,7 +17,7 @@
 
         <canvas id="rainCanvas"></canvas>
         <audio id="rainSound" loop>
-            <source src="media/audio/578599__auwenngebleau__slow-rain.m4a" type="audio/mp3">
+            <source th:src="@{/media/audio/578599__auwenngebleau__slow-rain.m4a}" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
@@ -25,7 +25,7 @@
         <nav class="navbar">
             <ul className="nav-list">
                 <li class="nav-item">
-                    <a  th:href = "@{/logout}">
+                    <a th:href="@{/logout}">
                         <button class="login-button" id="loginButton">Log out</button>
                     </a>
                 </li>
@@ -78,9 +78,9 @@
                 <input class="TimeInput" type="number" id="Breaksecond" placeholder="Seconds">
             </div>
             <div class="three-btn">
-                <button title="Cancel" class="italic-btn"id="cancelButton">Cancel</button>
-                <button title="Don't forget to save." class="bold-btn"id="saveButton">Save</button>
-                <button title="25:00 and 05:00" class="italic-btn"id="defaultButton">Default</button>
+                <button title="Cancel" class="italic-btn" id="cancelButton">Cancel</button>
+                <button title="Don't forget to save." class="bold-btn" id="saveButton">Save</button>
+                <button title="25:00 and 05:00" class="italic-btn" id="defaultButton">Default</button>
             </div>
             <h6 class="WhiteText"> *** If you're not input any numbers, They will be 0 as default. ***</h6>
         </div>
@@ -99,9 +99,10 @@
             <div class="musicinfo WhiteText">
                 <p class="Nowplay">Now playing</p>
                 <h2 id="SongName">Welcome School lofi mix</h2>
-                <p class="owner" id="OwnName" >Blue Archive</p>
+                <p class="owner" id="OwnName">Blue Archive</p>
                 <audio id="audio">
-                    <source id="musicSource" src="../media/audio/WelcomeSchool.mp3" type="audio/mpeg" allow="autoplay">
+                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg"
+                        allow="autoplay">
                 </audio>
                 <div class="audioProcess">
                     <div class="Processin" id="musicprocess"></div>
@@ -112,7 +113,7 @@
                 </div>
             </div>
             <div class="musiccover">
-                <img src="../media/img/ShirokoTerror.png" alt="Blue Archive" id="MusicCover" draggable="false">
+                <img th:src="@{/media/img/ShirokoTerror.png}" alt="Blue Archive" id="MusicCover" draggable="false">
             </div>
         </div>
     </div>
@@ -125,28 +126,28 @@
                     <li class="list active">
                         <a th:href="@{/}">
                             <div class="Changer"></div>
-                            <img type="หน้าเดิม" src="media/ico/GreenTimer.png" id="TimerPage" draggable="false">
+                            <img type="หน้าเดิม" th:src="@{/media/ico/GreenTimer.png}" id="TimerPage" draggable="false">
                         </a>
                     </li>
-                    
+
                     <li class="list">
-                        <a th:href ="@{/todolists}">
-                        <div class="Changer"></div>
-                        <img type="หน้าTodo" src="media/ico/WhiteTodo.png" id="TodoPage" draggable="false">
+                        <a th:href="@{/todolists}">
+                            <div class="Changer"></div>
+                            <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
                         </a>
 
                     </li>
                     <li class="list">
-                        <a th:href ="@{/topics}">
-                        <div class="Changer"></div>
-                        <img type="หน้าQuiz" src="media/ico/WhiteQuiz.png" id="QuizPage" draggable="false">
-                        </li>
+                        <a th:href="@{/topics}">
+                            <div class="Changer"></div>
+                            <img type="หน้าQuiz" th:src="@{/media/ico/WhiteQuiz.png}" id="QuizPage" draggable="false">
+                    </li>
                     </li>
                     <li class="list">
                         <a th:href="@{/history}">
-                        <div class="Changer"></div>
-                        <img type="หน้าStat" src="media/ico/WhiteStat.png" id="StatPage" draggable="false">
-                    </a>
+                            <div class="Changer"></div>
+                            <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
+                        </a>
                     </li>
 
                 </ul>
@@ -164,13 +165,13 @@
             <ul>
                 <li>
                     <span class="icon" onclick="toggleRain()">
-                        <img src="media/ico/animation-on.png" id="Anima" draggable="false">
+                        <img th:src="@{/media/ico/animation-on.png}" id="Anima" draggable="false">
 
                     </span>
                 </li>
                 <li>
                     <span class="icon" id="audioa">
-                        <img src="media/ico/audio-off.png" id="audioimg" draggable="false">
+                        <img th:src="@{/media/ico/audio-off.png}" id="audioimg" draggable="false">
                     </span>
 
                 </li>

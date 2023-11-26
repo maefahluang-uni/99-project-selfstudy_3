@@ -4,36 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Study Smartly</title>
     <link rel="stylesheet" th:href="@{/css/login.css}"> <!-- Linking an external CSS file -->
+    <link rel="stylesheet" th:href="@{/css/thisisalerto.css}">
 </head>
 
 <body>
 
     <div class="container"> <!-- Main container for content -->
         <div class="header"> <!-- Header section -->
-            
-                <div class="text">LOGIN</div> <!-- Text "LOGIN" -->
-          
+
+            <div class="text">LOGIN</div> <!-- Text "LOGIN" -->
+
         </div>
-        
+
         <form th:action="@{/login}" method="post">
-        <div class="inputs"> <!-- Section containing input fields -->
-            <div class="input"> <!-- Input field for username or email -->
-                <img th:src="@{/Components/img/email.png}" alt="" /> <!-- Icon (presumably for a person) -->
-                <input type="text" placeholder="Email" id ="username" name = "username" required /> <!-- Text input for username or email -->
+            <div class="inputs"> <!-- Section containing input fields -->
+                <div class="input"> <!-- Input field for username or email -->
+                    <img th:src="@{/Components/img/email.png}" alt="" /> <!-- Icon (presumably for a person) -->
+                    <input type="text" placeholder="Email" id="username" name="username" required />
+                    <!-- Text input for username or email -->
+                </div>
+
+                <div class="input"> <!-- Input field for password -->
+                    <img th:src="@{/Components/img/password.png}" alt="" /> <!-- Icon (presumably for a password) -->
+                    <input type="password" placeholder="Password" id="password" name="password" required />
+                    <!-- Password input -->
+                </div>
             </div>
 
-            <div class="input"> <!-- Input field for password -->
-                <img th:src="@{/Components/img/password.png}" alt="" /> <!-- Icon (presumably for a password) -->
-                <input type="password" placeholder="Password" id ="password" name = "password" required /> <!-- Password input -->
+            <div class="submit-container"> <!-- Container for login button -->
+                <!-- <a href="./index.html" class="submit">Login</a> Login button -->
+                <button type="submit" class="login-btn" value="Log In">Login</button>
             </div>
-        </div>
-
-        <div class="submit-container"> <!-- Container for login button -->
-            <!-- <a href="./index.html" class="submit">Login</a> Login button -->
-            <button type="submit" class="login-btn" value="Log In">Login</button>
-        </div>
         </form>
 
         <div class="gogo"> <!-- Section with "Back" and sign-up option -->
@@ -46,7 +49,7 @@
                     <a th:href="@{/registration}" class="sign-up-btn">Sign up now!</a>
                 </h1>
             </div>
-            
+
         </div>
     </div>
 
@@ -58,6 +61,17 @@
             window.location.href = './index.html';// Redirects to 'homepage.html'
         });
     </script> -->
+    <form action="">
+        <div class="alerto-success" th:if="${param.success}"><b>
+                <p>Your login successfullly</p>
+            </b></div>
+        <div class="alerto-fail" th:if="${param.error}"><b>
+                <p>Invalid Email or Password</p>
+            </b></div>
+        <div class="alerto-logout" th:if="${param.logout}"><b>
+                <p>Logout successfullly</p>
+            </b></div>
+    </form>
 </body>
 
 </html>

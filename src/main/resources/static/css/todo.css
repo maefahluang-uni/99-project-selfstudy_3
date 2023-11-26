@@ -1,7 +1,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   margin: 0px;
   padding: 0px;
   background-image: url("../media/img/background.jpg");
@@ -423,12 +423,12 @@ body {
 
 @media (max-width: 1485px) {
   .musiccover {
-      display: none;
+    display: none;
   }
 
   .Musicplayer .Musicplayer-container .musicinfo {
-      margin-top: 3%;
-      margin-left: 10%;
+    margin-top: 3%;
+    margin-left: 10%;
   }
 
 }
@@ -436,7 +436,7 @@ body {
 @media (max-width: 1194px) {
   .Musicplayer .Musicplayer-container .musicinfo .Nowplay {
 
-      display: none;
+    display: none;
   }
 
 }
@@ -505,7 +505,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  
+
 }
 
 .task {
@@ -521,6 +521,7 @@ button {
   margin-right: auto;
   margin-top: 20px;
 }
+
 .add-task input {
   margin-left: auto;
   margin-right: auto;
@@ -590,8 +591,8 @@ button {
 
 label {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
   font-weight: bold;
   margin-top: 10px;
 
@@ -626,7 +627,7 @@ Table.ShowTodoTable tr td {
   padding: 1%;
 }
 
-.table-container{
+.table-container {
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -634,16 +635,18 @@ Table.ShowTodoTable tr td {
   overflow-y: auto;
   border: 1px solid white;
 }
-td.btn-intable-align{
-  display: flex ;
+
+td.btn-intable-align {
+  display: flex;
   justify-content: space-evenly;
   margin-top: 3%;
   margin-bottom: 3%;
   margin-left: 3%;
   margin-right: 3%;
 }
-td.btn-intable-align .table-btn{
- 
+
+td.btn-intable-align .table-btn {
+
   padding-left: 15%;
   padding-right: 15%;
   padding-top: 10%;
@@ -655,32 +658,32 @@ td.btn-intable-align .table-btn{
   transition: 0.5s;
 }
 
-td.btn-intable-align .table-btn:hover{
+td.btn-intable-align .table-btn:hover {
   color: black;
   background-color: white;
   transition: 0.5s;
 }
 
-.back-btn{
+.back-btn {
   text-decoration: none;
 
 }
 
-.back-btn-container{
+.back-btn-container {
   display: flex;
   margin-top: 2.5%;
   justify-content: space-evenly;
-  
-  
-  
+
+
+
 }
 
-.back-btn-container .back-btn:hover{
+.back-btn-container .back-btn:hover {
   text-decoration: underline;
 
 }
 
-.add-todo-btn{
+.add-todo-btn {
   margin-top: 3%;
 }
 

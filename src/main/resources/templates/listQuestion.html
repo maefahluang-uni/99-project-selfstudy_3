@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/do-quiz.css}">
 
-    <title>Quiz</title>
+    <title>Study Smartly</title>
 
 </head>
 
@@ -25,7 +25,7 @@
         <nav class="navbar">
             <ul className="nav-list">
                 <li class="nav-item">
-                    <a  th:href = "@{/logout}">
+                    <a th:href="@{/logout}">
                         <button class="login-button" id="loginButton">Log out</button>
                     </a>
                 </li>
@@ -36,173 +36,187 @@
         <div class="OpSqure">
             <h1 class="WhiteText qiz-tpc">Quiz</h1>
             <div class="btn-container">
-                <a class="do-quiz-btn" th:href="@{/topics/{id}/quiz(id=${topic_id})}"><button >Attempt</button></a>
-                <a class="do-quiz-btn" th:href="@{/topics/{id}/delete/all(id=${topic_id})}"><button class="delete-all-btn">DeleteAll</button></a>
+                <a class="do-quiz-btn" th:href="@{/topics/{id}/quiz(id=${topic_id})}"><button>Attempt</button></a>
+                <a class="do-quiz-btn" th:href="@{/topics/{id}/delete/all(id=${topic_id})}"><button
+                        class="delete-all-btn">DeleteAll</button></a>
             </div>
-        <div class="Question-container">
+            <div class="Question-container">
 
-                <div class="PerOneQuestion" th:each="qs : ${Questions}">
-                    <!--
-                    <div class="questionNumber">This is Question number.</div>
-                    -->
+                <div class="PerOneQuestion" th:each="qs, i : ${Questions}">
+
+                    <div class="questionNumber" th:text="'This is Question number ' + ${i.index + 1} + '.'">This is
+                        Question
+                        number.</div>
+
                     <div class="Topper-content">
-                        
-                    
-                    <div class="Topper-content-left">
-                    <div class="questionDetail" th:text = "${qs.questionTitle}"></div>
-                    <div class="cr-ans-ctn">
-                        <h5 style="color:white">Correct Answer is</h5>
-                        <h5 style="font-weight: bold; color: rgb(151, 255, 99);" th:text = "${qs.correctAnswer}" > Bing chilling </h5>
+
+
+                        <div class="Topper-content-left">
+                            <div class="questionDetail" th:text="${qs.questionTitle}"></div>
+                            <div class="cr-ans-ctn">
+                                <h5 style="color:white">Correct Answer is</h5>
+                                <h5 style="font-weight: bold; color: rgb(151, 255, 99);" th:text="${qs.correctAnswer}">
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="Topper-content-right">
+                            <a th:href="@{'/topics/' + ${topic_id} + '/' + ${qs.id}} +'/edit'"><button
+                                    class="edit-btn">Edit</button></a>
+                            <a th:href="@{'/topics/' + ${topic_id} + '/delete/' + ${qs.id}}"><button
+                                    class="delete-btn">Delete</button></a>
+                        </div>
+
                     </div>
-                </div>
-                <div class="Topper-content-right">
-                    <a th:href="@{'/topics/' + ${topic_id} + '/' + ${qs.id}} +'/edit'"><button class="edit-btn">Edit</button></a>
-                    <a th:href="@{'/topics/' + ${topic_id} + '/delete/' + ${qs.id}}"><button class="delete-btn">Delete</button></a></div>
-                    
-            </div>
                     <ul>
-                        <div class="choice" >
-                            <p th:text = "${qs.choice1}"></p>
+                        <div class="choice">
+                            <p th:text="${qs.choice1}"></p>
 
                         </div>
 
                         <div class="choice">
-                            <p th:text = "${qs.choice2}"></p>
+                            <p th:text="${qs.choice2}"></p>
 
                         </div>
 
                         <div class="choice">
-                            <p th:text = "${qs.choice3}"></p>
+                            <p th:text="${qs.choice3}"></p>
 
                         </div>
 
                         <div class="choice">
-                            <p th:text = "${qs.choice4}"></p>
+                            <p th:text="${qs.choice4}"></p>
 
                         </div>
                     </ul>
 
-            </div>
-         
-        
-
-
-
-
-        </div>
-        <div class="below-btn-container">
-        <a class="back-btn WhiteText" th:href="@{/topics/{id}/add(id=${topic_id})}"><button style="background-color: transparent;border: none; outline: none; color: white; cursor: pointer;" >Add</button></a>
-        <a class="back-btn WhiteText" th:href="@{/topics}"><button style="background-color: transparent;border: none; outline: none; color: white; cursor: pointer;" >Back</button></a>
-    </div>
-
-    </div>
-
-    <div class="Realtime">
-        <div class="Realtime-container">
-            <div class="WhiteText bigTimerRight" id="rTime"></div>
-            <div class="WhiteText smalltimezone" id="Timezone"></div>
-            <div class="WhiteText" id="dmy"></div>
-        </div>
-    </div>
-    <div class="Musicplayer">
-        <div class="Musicplayer-container">
-
-            <div class="musicinfo WhiteText">
-                <p class="Nowplay">Now playing</p>
-                <h2 id="SongName">Welcome School lofi mix</h2>
-                <p class="owner" id="OwnName" >Blue Archive</p>
-                <audio id="audio">
-                    <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg" allow="autoplay">
-                </audio>
-                <div class="audioProcess">
-                    <div class="Processin" id="musicprocess"></div>
                 </div>
-                <div class="AudTimer">
-                    <div class="AudProc WhiteText" id="AudProcess"> 00:00</div>
-                    <div class="AudLen WhiteText" id="AudLength"> 00:00</div>
-                </div>
+
+
+
+
+
+
             </div>
-            <div class="musiccover">
-                <img th:src="@{/media/img/ShirokoTerror.png}" alt="Blue Archive" id="MusicCover" draggable="false">
+            <div class="below-btn-container">
+                <a class="back-btn WhiteText" th:href="@{/topics/{id}/add(id=${topic_id})}"><button
+                        style="background-color: transparent;border: none; outline: none; color: white; cursor: pointer;">Add</button></a>
+                <a class="back-btn WhiteText" th:href="@{/topics}"><button
+                        style="background-color: transparent;border: none; outline: none; color: white; cursor: pointer;">Back</button></a>
+            </div>
+
+        </div>
+
+        <div class="Realtime">
+            <div class="Realtime-container">
+                <div class="WhiteText bigTimerRight" id="rTime"></div>
+                <div class="WhiteText smalltimezone" id="Timezone"></div>
+                <div class="WhiteText" id="dmy"></div>
             </div>
         </div>
-    </div>
+        <div class="Musicplayer">
+            <div class="Musicplayer-container">
 
-    <div class="Controller center-container">
-        <div class="Controller-left">
+                <div class="musicinfo WhiteText">
+                    <p class="Nowplay">Now playing</p>
+                    <h2 id="SongName">Welcome School lofi mix</h2>
+                    <p class="owner" id="OwnName">Blue Archive</p>
+                    <audio id="audio">
+                        <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg"
+                            allow="autoplay">
+                    </audio>
+                    <div class="audioProcess">
+                        <div class="Processin" id="musicprocess"></div>
+                    </div>
+                    <div class="AudTimer">
+                        <div class="AudProc WhiteText" id="AudProcess"> 00:00</div>
+                        <div class="AudLen WhiteText" id="AudLength"> 00:00</div>
+                    </div>
+                </div>
+                <div class="musiccover">
+                    <img th:src="@{/media/img/ShirokoTerror.png}" alt="Blue Archive" id="MusicCover" draggable="false">
+                </div>
+            </div>
+        </div>
 
-            <div class="ChangePageContent">
+        <div class="Controller center-container">
+            <div class="Controller-left">
+
+                <div class="ChangePageContent">
+                    <ul>
+                        <li class="list ">
+                            <div class="Changer"></div>
+                            <a th:href="@{/}">
+
+                                <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage"
+                                    draggable="false">
+                            </a>
+                        </li>
+
+                        <li class="list">
+                            <div class="Changer"></div>
+                            <a th:href="@{/todolists}">
+
+                                <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage"
+                                    draggable="false">
+                            </a>
+
+                        </li>
+                        <li class="list active">
+                            <div class="Changer"></div>
+                            <a th:href="@{/topics}">
+
+                                <img type="หน้าQuiz" th:src="@{/media/ico/GreenQuiz.png}" id="QuizPage"
+                                    draggable="false">
+                            </a>
+                        </li>
+                        <li class="list">
+                            <div class="Changer"></div>
+                            <a th:href="@{/history}">
+
+                                <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage"
+                                    draggable="false">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+
+                <div class="SepLine">
+                    <div class="SepLine1"></div>
+                    <div class="SepLine2"></div>
+                    <div class="SepLine3"></div>
+                </div>
+
+            </div>
+            <div class="Controller-right">
                 <ul>
-                    <li class="list ">
-                        <div class="Changer"></div>
-                        <a th:href="@{/}">
-                            
-                            <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
-                        </a>
+                    <li>
+                        <span class="icon" onclick="toggleRain()">
+                            <img th:src="@{/media/ico/animation-on.png}" id="Anima" draggable="false">
+
+                        </span>
                     </li>
-                    
-                    <li class="list">
-                        <div class="Changer"></div>
-                        <a th:href ="@{/todolists}">
-                        
-                        <img type="หน้าTodo" th:src="@{/media/ico/WhiteTodo.png}" id="TodoPage" draggable="false">
-                        </a>
+                    <li>
+                        <span class="icon" id="audioa">
+                            <img th:src="@{/media/ico/audio-off.png}" id="audioimg" draggable="false">
+                        </span>
 
                     </li>
-                    <li class="list active">
-                        <div class="Changer"></div>
-                        <a th:href ="@{/topics}">
-                        
-                        <img type="หน้าQuiz" th:src="@{/media/ico/GreenQuiz.png}" id="QuizPage" draggable="false">
-                        </a>
-                    </li>
-                    <li class="list">
-                        <div class="Changer"></div>
-                        <a th:href="@{/history}">
-                        
-                        <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
-                    </a>
-                    </li>
-
                 </ul>
+
             </div>
-
-
-            <div class="SepLine">
-                <div class="SepLine1"></div>
-                <div class="SepLine2"></div>
-                <div class="SepLine3"></div>
-            </div>
-
         </div>
-        <div class="Controller-right">
-            <ul>
-                <li>
-                    <span class="icon" onclick="toggleRain()">
-                        <img th:src="@{/media/ico/animation-on.png}" id="Anima" draggable="false">
-
-                    </span>
-                </li>
-                <li>
-                    <span class="icon" id="audioa">
-                        <img th:src="@{/media/ico/audio-off.png}" id="audioimg" draggable="false">
-                    </span>
-
-                </li>
-            </ul>
-
-        </div>
-    </div>
 
 
 
 
-    <script th:src="@{/Components/music/Musicplayer.js}"></script>
-    <script th:src="@{/js/redirect.js}"></script>
-    <script th:src="@{/Components/realtime/Realtime.js}"></script>
-    <script th:src="@{/Components/rain/rain.js}"></script>
-    <script th:src="@{/Components/navigator-bar/Navigator-Bar.js}"></script>
-    <script th:src="@{/Components/account/account.js}"></script>
+        <script th:src="@{/Components/music/Musicplayer.js}"></script>
+        <script th:src="@{/js/redirect.js}"></script>
+        <script th:src="@{/Components/realtime/Realtime.js}"></script>
+        <script th:src="@{/Components/rain/rain.js}"></script>
+        <script th:src="@{/Components/navigator-bar/Navigator-Bar.js}"></script>
+        <script th:src="@{/Components/account/account.js}"></script>
 </body>
 
 </html>

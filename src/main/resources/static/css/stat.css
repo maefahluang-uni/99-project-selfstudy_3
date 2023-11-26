@@ -84,7 +84,8 @@ body {
     position: absolute;
     height: 75%;
     width: 50%;
-    background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black background */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* semi-transparent black background */
     border-radius: 10px;
     top: 50%;
     left: 50%;
@@ -92,8 +93,10 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    justify-content: center;
+    /* Center content vertically */
+    align-items: center;
+    /* Center content horizontally */
 }
 
 .center-container {
@@ -353,6 +356,7 @@ body {
     margin-top: auto;
     margin-bottom: auto;
 }
+
 .Controller .Controller-left .SepLine3 {
     border-radius: 10px;
     background-color: white;
@@ -375,44 +379,44 @@ body {
     height: 10%;
 }
 
-.Controller-left .ChangePageContent ul li:nth-child(1).active  .Changer {
+.Controller-left .ChangePageContent ul li:nth-child(1).active .Changer {
     position: absolute;
     background-color: white;
     width: 23.5%;
     height: 85%;
-    top:7.5%;
+    top: 7.5%;
     border-radius: 10px 0px 0px 10px;
     left: 1.5%;
     transition: 0.3s;
 }
 
-.Controller-left .ChangePageContent ul li:nth-child(2).active  .Changer {
+.Controller-left .ChangePageContent ul li:nth-child(2).active .Changer {
     position: absolute;
     background-color: white;
     width: 25%;
     height: 85%;
-    top:7.5%;
+    top: 7.5%;
     transition: 0.3s;
 }
 
-.Controller-left .ChangePageContent ul li:nth-child(3).active  .Changer {
+.Controller-left .ChangePageContent ul li:nth-child(3).active .Changer {
     position: absolute;
     background-color: white;
     width: 25%;
     height: 85%;
-    top:7.5%;
+    top: 7.5%;
 
     transition: 0.3s;
 }
 
-.Controller-left .ChangePageContent ul li:nth-child(4).active  .Changer {
+.Controller-left .ChangePageContent ul li:nth-child(4).active .Changer {
     position: absolute;
     background-color: white;
     width: 23.5%;
     height: 85%;
-    top:7.5%;
-    border-radius:0px 10px 10px 0px;
-    right:1.5%;
+    top: 7.5%;
+    border-radius: 0px 10px 10px 0px;
+    right: 1.5%;
     transition: 0.3s;
 }
 
@@ -440,20 +444,26 @@ body {
 /*stats*/
 
 .box {
-    max-width: 1200px; /* Increased width */
+    max-width: 1200px;
+    /* Increased width */
     margin: 30px auto;
-    padding: 40px; /* Increased padding */
-    background-color: transparent; /* Apply the opacity to the background-color only */
+    padding: 40px;
+    /* Increased padding */
+    background-color: transparent;
+    /* Apply the opacity to the background-color only */
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-   
+
     /* Centering styles */
-    position: absolute; /* Switch to fixed if you want it to stay in the center even when scrolling */
-    top: 45%; /* Moved up by reducing the percentage */
+    position: absolute;
+    /* Switch to fixed if you want it to stay in the center even when scrolling */
+    top: 45%;
+    /* Moved up by reducing the percentage */
     left: 50%;
-    transform: translate(-50%, -50%); /* This moves the box back by 50% of its own width and height */
-   
-  
+    transform: translate(-50%, -50%);
+    /* This moves the box back by 50% of its own width and height */
+
+
 }
 
 .table {
@@ -462,7 +472,7 @@ body {
     margin-top: 20px;
     background-color: #383838;
     overflow: hidden;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 5px;
 }
 
@@ -499,8 +509,10 @@ body {
 h1 {
     text-align: center;
     color: #ffffff;
-    text-shadow:  0 0 10px rgba(212, 212, 212, 0.1);;
+    text-shadow: 0 0 10px rgba(212, 212, 212, 0.1);
+    ;
 }
-tr{
+
+tr {
     color: #ffffff;
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import th.mfu.Service.UserService;
 import th.mfu.webDto.UserRegistrationDto;
 
-
 @Controller
 @RequestMapping("/registration")
 public class UserRegistrationController {
@@ -20,17 +19,17 @@ public class UserRegistrationController {
 		super();
 		this.userService = userService;
 	}
-	
+
 	@ModelAttribute("user")
-    public UserRegistrationDto userRegistrationDto() {
-        return new UserRegistrationDto();
-    }
-	
+	public UserRegistrationDto userRegistrationDto() {
+		return new UserRegistrationDto();
+	}
+
 	@GetMapping
 	public String showRegistrationForm() {
 		return "registration";
 	}
-	
+
 	@PostMapping
 	public String registerUserAccount(@ModelAttribute("user") UserRegistrationDto registrationDto) {
 		userService.save(registrationDto);

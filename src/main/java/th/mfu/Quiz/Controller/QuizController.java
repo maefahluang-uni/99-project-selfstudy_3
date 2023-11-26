@@ -30,11 +30,11 @@ import th.mfu.domain.User;
 
 @Controller
 public class QuizController {
-	
-	@Autowired
-	QuizService qService;
+
     @Autowired
-	UserRepository uRepo;
+    QuizService qService;
+    @Autowired
+    UserRepository uRepo;
     @Autowired
     ResultRepository rRepo;
     @Autowired
@@ -46,62 +46,61 @@ public class QuizController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
     }
 
-
     @GetMapping("/topics/{id}/quiz")
     public String getQuizPage(Model model, @PathVariable Long id) {
-    Topic topic = topicRepo.findById(id).get();
-    // Handle GET request
-    QuestionForm qForm = qService.getQuestions(id);
-	model.addAttribute("qForm", qForm);
-    model.addAttribute("topic_id", id);
-    model.addAttribute("topicName",topic.getTopic_Name());
-    return "quiz";
-}
-		
-	@PostMapping("/topics/{id}/quiz")
-	public String quiz(Model model, @PathVariable Long id, @ModelAttribute Result result) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Topic topic = topicRepo.findById(id).get();
+        // Handle GET request
+        QuestionForm qForm = qService.getQuestions(id);
+        model.addAttribute("qForm", qForm);
+        model.addAttribute("topic_id", id);
+        model.addAttribute("topicName", topic.getTopic_Name());
+        return "quiz";
+    }
+
+    @PostMapping("/topics/{id}/quiz")
+    public String quiz(Model model, @PathVariable Long id, @ModelAttribute Result result) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         String email = ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
         User user = uRepo.findByEmail(email);
 
-		result = new Result();
-		result.setUser(user);
+        result = new Result();
+        result.setUser(user);
 
-		QuestionForm qForm = qService.getQuestions(id);
-		model.addAttribute("qForm", qForm);
-		
-		return "quiz";
-	}
-	
-	@PostMapping("/topics/{id}/submit")
-	public String submit(@ModelAttribute QuestionForm qForm, Model model, @ModelAttribute Result result, @PathVariable long id) {
+        QuestionForm qForm = qService.getQuestions(id);
+        model.addAttribute("qForm", qForm);
+
+        return "quiz";
+    }
+
+    @PostMapping("/topics/{id}/submit")
+    public String submit(@ModelAttribute QuestionForm qForm, Model model, @ModelAttribute Result result,
+            @PathVariable long id) {
         Topic topic = topicRepo.findById(id).get();
         Date date = new Date();
         Timestamp timestamp = new Timestamp(date.getTime());
 
-		result.setScore(qService.getResult(qForm,id));
+        result.setScore(qService.getResult(qForm, id));
         result.setDate(timestamp);
         result.setTopic_name(topic.getTopic_Name());
         System.out.println(topic.getTopic_Name());
-		qService.saveScore(result);
-
+        qService.saveScore(result);
 
         model.addAttribute("result", result);
         model.addAttribute("topic_id", id);
-		
-		return "show-score";
-	}
+
+        return "show-score";
+    }
 
     @GetMapping("/history")
-	public String score(Model m) {
+    public String score(Model m) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         String email = ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
-		List<Result> result = rRepo.findAllByEmail(email);
-		m.addAttribute("resultlists", result);
-		
-		return "history";
-	}
+        List<Result> result = rRepo.findAllByEmail(email);
+        m.addAttribute("resultlists", result);
+
+        return "history";
+    }
 
 }

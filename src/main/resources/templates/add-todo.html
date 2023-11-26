@@ -1,205 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/todo.css" />
 
-    <title>Study Smartly</title>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" th:href="@{/css/todo.css}" />
 
-  <body>
-    <div class="Fade"></div>
-    <div class="fit-screendo">
-      <canvas id="rainCanvas"></canvas>
-      <audio id="rainSound" loop>
-        <source
-          src="../media/audio/578599__auwenngebleau__slow-rain.m4a"
-          type="audio/mp3"
-        />
-        Your browser does not support the audio element.
-      </audio>
+  <title>Study Smartly</title>
+</head>
+
+<body>
+  <div class="Fade"></div>
+  <div class="fit-screendo">
+    <canvas id="rainCanvas"></canvas>
+    <audio id="rainSound" loop>
+      <source th:src="@{/media/audio/578599__auwenngebleau__slow-rain.m4a}" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  <span class="left-panel">
+    <nav class="navbar">
+      <ul className="nav-list">
+        <li class="nav-item">
+          <a th:href="@{/logout}">
+            <button class="login-button" id="loginButton">Log out</button>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </span>
+  <div class="toCenter">
+    <div class="OpSqure">
+      <!--- YOUR CONTENT HERE-->
+      <form th:action="@{/todolists}" th:object="${todo}" method="post">
+        <div class="content-container">
+          <main>
+            <h1 class="WhiteText">Add task</h1>
+
+            <!-- Modal for adding to-do details -->
+            <div class="modal">
+              <label>Name</label>
+              <input type="text" id="new-task" placeholder="Add a name..." th:field="*{Topic}" required />
+              <label>Start</label>
+              <input type="date" id="startDate" th:field="*{Start_Date}" required />
+              <input type="time" id="startTime" th:field="*{Start_Time}" required />
+
+              <label>Until</label>
+              <input type="date" id="endDate" th:field="*{Due_Date}" required />
+              <input type="time" id="endTime" th:field="*{Due_Time}" required />
+
+              <label>Description</label>
+              <textarea id="details" th:field="*{Description}" required></textarea>
+            </div>
+            <div class="back-btn-container">
+              <a class="back-btn WhiteText" th:href="@{/todolists}"><button type="button">Back</button></a>
+              <button type="submit">Done</button>
+            </div>
+          </main>
+        </div>
+      </form>
     </div>
-    <span class="left-panel">
-      <nav class="navbar">
-        <ul className="nav-list">
-          <li class="nav-item">
-            <a  th:href = "@{/logout}">
-              <button class="login-button" id="loginButton">Log out</button>
+  </div>
+
+  <div class="Realtime">
+    <div class="Realtime-container">
+      <div class="WhiteText bigTimerRight" id="rTime"></div>
+      <div class="WhiteText smalltimezone" id="Timezone"></div>
+      <div class="WhiteText" id="dmy"></div>
+    </div>
+  </div>
+  <div class="Musicplayer">
+    <div class="Musicplayer-container">
+      <div class="musicinfo WhiteText">
+        <p class="Nowplay">Now playing</p>
+        <h2 id="SongName">Welcome School lofi mix</h2>
+        <p class="owner" id="OwnName">Blue Archive</p>
+        <audio id="audio">
+          <source id="musicSource" th:src="@{/media/audio/WelcomeSchool.mp3}" type="audio/mpeg" allow="autoplay" />
+        </audio>
+        <div class="audioProcess">
+          <div class="Processin" id="musicprocess"></div>
+        </div>
+        <div class="AudTimer">
+          <div class="AudProc WhiteText" id="AudProcess">00:00</div>
+          <div class="AudLen WhiteText" id="AudLength">00:00</div>
+        </div>
+      </div>
+      <div class="musiccover">
+        <img th:src="@{/media/img/ShirokoTerror.png}" alt="Blue Archive" id="MusicCover" draggable="false" />
+      </div>
+    </div>
+  </div>
+
+  <div class="Controller center-container">
+    <div class="Controller-left">
+      <div class="ChangePageContent">
+        <ul>
+          <li class="list ">
+            <div class="Changer"></div>
+            <a th:href="@{/}">
+
+              <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
             </a>
           </li>
-        </ul>
-      </nav>
-    </span>
-    <div class="toCenter">
-      <div class="OpSqure">
-        <!--- YOUR CONTENT HERE-->
-        <form th:action="@{/todolists}" th:object="${todo}" method="post">
-          <div class="content-container">
-            <main>
-              <h1 class="WhiteText">Add task</h1>
 
-              <!-- Modal for adding to-do details -->
-              <div class="modal">
-                <label>Name</label>
-                <input
-                  type="text"
-                  id="new-task"
-                  placeholder="Add a name..."
-                  th:field="*{Topic}"
-                  required
-                />
-                <label>Start</label>
-                <input
-                  type="date"
-                  id="startDate"
-                  th:field="*{Start_Date}"
-                  required
-                />
-                <input
-                  type="time"
-                  id="startTime"
-                  th:field="*{Start_Time}"
-                  required
-                />
+          <li class="list active">
+            <div class="Changer"></div>
+            <a th:href="@{/todolists}">
 
-                <label>Until</label>
-                <input
-                  type="date"
-                  id="endDate"
-                  th:field="*{Due_Date}"
-                  required
-                />
-                <input
-                  type="time"
-                  id="endTime"
-                  th:field="*{Due_Time}"
-                  required
-                />
+              <img type="หน้าTodo" th:src="@{/media/ico/GreenTodo.png}" id="TodoPage" draggable="false">
+            </a>
 
-                <label>Description</label>
-                <textarea
-                  id="details"
-                  th:field="*{Description}"
-                  required
-                ></textarea>
-              </div>
-              <div class="back-btn-container">
-                <a class="back-btn WhiteText" href="../todolists"><button type="button">Back</button></a>
-                <button type="submit">Done</button>
-              </div>
-            </main>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="Realtime">
-      <div class="Realtime-container">
-        <div class="WhiteText bigTimerRight" id="rTime"></div>
-        <div class="WhiteText smalltimezone" id="Timezone"></div>
-        <div class="WhiteText" id="dmy"></div>
-      </div>
-    </div>
-    <div class="Musicplayer">
-      <div class="Musicplayer-container">
-        <div class="musicinfo WhiteText">
-          <p class="Nowplay">Now playing</p>
-          <h2 id="SongName">Welcome School lofi mix</h2>
-          <p class="owner" id="OwnName">Blue Archive</p>
-          <audio id="audio">
-            <source
-              id="musicSource"
-              src="../media/audio/WelcomeSchool.mp3"
-              type="audio/mpeg"
-              allow="autoplay"
-            />
-          </audio>
-          <div class="audioProcess">
-            <div class="Processin" id="musicprocess"></div>
-          </div>
-          <div class="AudTimer">
-            <div class="AudProc WhiteText" id="AudProcess">00:00</div>
-            <div class="AudLen WhiteText" id="AudLength">00:00</div>
-          </div>
-        </div>
-        <div class="musiccover">
-          <img
-            src="../media/img/ShirokoTerror.png"
-            alt="Blue Archive"
-            id="MusicCover"
-            draggable="false"
-          />
-        </div>
-      </div>
-    </div>
-
-    <div class="Controller center-container">
-      <div class="Controller-left">
-        <div class="ChangePageContent">
-          <ul>
-            <li class="list ">
-              <div class="Changer"></div>
-                <a th:href="@{/}">
-                    
-                    <img type="หน้าเดิม" th:src="@{/media/ico/WhiteTimer.png}" id="TimerPage" draggable="false">
-                </a>
-            </li>
-            
-            <li class="list active">
-              <div class="Changer"></div>
-                <a th:href ="@{/todolists}">
-                
-                <img type="หน้าTodo" th:src="@{/media/ico/GreenTodo.png}" id="TodoPage" draggable="false">
-                </a>
-
-            </li>
-            <li class="list">
-              <div class="Changer"></div>
-                <a th:href ="@{/topics}">
-                
-                <img type="หน้าQuiz" th:src="@{/media/ico/WhiteQuiz.png}" id="QuizPage" draggable="false">
-                </a>
-            </li>
-            <li class="list">
-              <div class="Changer"></div>
-                <a th:href="@{/history}">
-                
-                <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
-                </a>
-            </li>
-
-        </ul>
-        </div>
-
-
-        <div class="SepLine">
-          <div class="SepLine1"></div>
-          <div class="SepLine2"></div>
-          <div class="SepLine3"></div>
-        </div>
-      </div>
-      <div class="Controller-right">
-        <ul>
-          <li>
-            <span class="icon" onclick="toggleRain()">
-              <img src="../media/ico/animation-on.png" id="Anima" />
-            </span>
           </li>
-          <li>
-            <span class="icon" id="audioa">
-              <img src="../media/ico/audio-off.png" id="audioimg" />
-            </span>
+          <li class="list">
+            <div class="Changer"></div>
+            <a th:href="@{/topics}">
+
+              <img type="หน้าQuiz" th:src="@{/media/ico/WhiteQuiz.png}" id="QuizPage" draggable="false">
+            </a>
           </li>
+          <li class="list">
+            <div class="Changer"></div>
+            <a th:href="@{/history}">
+
+              <img type="หน้าStat" th:src="@{/media/ico/WhiteStat.png}" id="StatPage" draggable="false">
+            </a>
+          </li>
+
         </ul>
       </div>
-    </div>
 
-    <script src="../Components/music/Musicplayer.js"></script>
-    <script src="../Components/realtime/Realtime.js"></script>
-    <script src="../Components/rain/rain.js"></script>
-    <script src="../Components/navigator-bar/Navigator-Bar.js"></script>
-    <script src="../Components/account/account.js"></script>
-    <script src="../js/todo.js"></script>
-  </body>
+
+      <div class="SepLine">
+        <div class="SepLine1"></div>
+        <div class="SepLine2"></div>
+        <div class="SepLine3"></div>
+      </div>
+    </div>
+    <div class="Controller-right">
+      <ul>
+        <li>
+          <span class="icon" onclick="toggleRain()">
+            <img th:src="@{/media/ico/animation-on.png}" id="Anima" />
+          </span>
+        </li>
+        <li>
+          <span class="icon" id="audioa">
+            <img th:src="@{/media/ico/audio-off.png}" id="audioimg" />
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <script th:src="@{/Components/music/Musicplayer.js}"></script>
+  <script th:src="@{/Components/realtime/Realtime.js}"></script>
+  <script th:src="@{/Components/rain/rain.js}"></script>
+  <script th:src="@{/Components/navigator-bar/Navigator-Bar.js}"></script>
+  <script th:src="@{/Components/account/account.js}"></script>
+  <script th:src="@{/js/todo.js}"></script>
+</body>
+
 </html>
