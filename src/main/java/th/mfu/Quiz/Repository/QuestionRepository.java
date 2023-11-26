@@ -3,6 +3,7 @@ package th.mfu.Quiz.Repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -13,6 +14,7 @@ public interface QuestionRepository extends JpaRepository<Question, Long> {
     @Query("SELECT q FROM Question q WHERE q.topic.id = :topic_id")
     List<Question> findAllByTopic(@Param("topic_id") Long topicId);
 
+    @Modifying
     @Query("DELETE FROM Question q WHERE q.topic.id = :topic_id")
     void deleteAllByTopicid(@Param("topic_id") Long topicId);
 }

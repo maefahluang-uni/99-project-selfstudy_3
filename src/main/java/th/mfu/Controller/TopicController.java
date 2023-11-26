@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import th.mfu.Quiz.Repository.QuestionRepository;
 import th.mfu.Repositories.TopicRepository;
 import th.mfu.Repositories.UserRepository;
 import th.mfu.domain.Topic;
@@ -26,6 +27,9 @@ public class TopicController {
 
     @Autowired
     UserRepository UserRepo;
+
+    @Autowired
+    QuestionRepository questionRepo;
 
     @GetMapping("/topics")
     public String listConcerts(Model model) {
@@ -87,6 +91,7 @@ public class TopicController {
     @Transactional
     @GetMapping("/topics/delete/{id}")
     public String deleteConcert(@PathVariable long id) {
+        questionRepo.deleteAllByTopicid(id);
         TopicRepo.deleteById(id);
         return "redirect:/topics";}
 }

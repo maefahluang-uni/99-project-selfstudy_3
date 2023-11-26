@@ -37,7 +37,7 @@
             <h1 class="WhiteText qiz-tpc">Quiz</h1>
             <div class="btn-container">
                 <a class="do-quiz-btn" th:href="@{/topics/{id}/quiz(id=${topic_id})}"><button >Attempt</button></a>
-                <button class="delete-all-btn " onclick="if (confirm('All question can not restore, are you sure to proceed.')) { alert('Button clicked!'); } else { alert('canceled.'); }">Delete</button>
+                <a class="do-quiz-btn" th:href="@{/topics/{id}/delete/all(id=${topic_id})}"><button class="delete-all-btn">DeleteAll</button></a>
             </div>
         <div class="Question-container">
 

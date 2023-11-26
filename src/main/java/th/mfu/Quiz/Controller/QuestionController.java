@@ -109,7 +109,7 @@ public class QuestionController {
     
     @Transactional
     @GetMapping("/topics/{topic_id}/delete/all")
-    public String deleteAll(Model model, @PathVariable long topic_id, @PathVariable long id) {
+    public String deleteAll(Model model, @PathVariable long topic_id){
         questionRepo.deleteAllByTopicid(topic_id);
         return "redirect:/topics/{topic_id}";
     }
