@@ -1,5 +1,5 @@
 Self Study Wedsite
-==============
+=============
 Please use this template for your project.
 
 Project Description:
