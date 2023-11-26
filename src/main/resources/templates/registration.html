@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up</title>
+    <link rel="stylesheet" th:href="@{/css/signup.css}"> <!--This links to an external CSS file-->
+</head>
+
+<body>
+    <div th:if="${param.success}" class="Alerto" id="alertonclick"><p>Sign up successful</p></div>
+
+    <form th:action="@{/registration}" th:object ="${user}" method="post">
+    <div class="container"> <!--This is the main contaiener for the content-->
+        <div class="header"> <!--This is the header section-->
+            <div class="text">SIGN UP</div> <!--This displays the text "SIGN UP"-->
+        </div>
+    
+        <div class="inputs"> <!--This section contains input fields-->
+            <div class="input"> <!--This is an input field for username-->
+                <img th:src="@{/Components/img/person.png}" alt="" /> <!--This displays an image (presumably an icon for a person)-->
+                <input type="text" placeholder="Username" th:field="*{userName}" required/> <!--This is a text input for username-->
+            </div>
+            
+            <!--Similar sections for email, password, and confirm password fields-->
+            <div class="input">
+                <img th:src="@{/Components/img/email.png}" alt="" />
+                <input type="email" placeholder="Email" th:field="*{email}" required/>
+            </div>
+    
+            <div class="input">
+                <img th:src="@{/Components/img/password.png}" alt="" />
+                <input type="password" placeholder="Password" th:field="*{Password}" required/>
+            </div>
+        </div>
+    
+        <div class="forgot-password">
+            Already have an account? <a class="WhiteText" th:href="@{/login}">Login Here!</a>
+        </div>
+        
+    
+        <div class="submit-container"> <!--This is  the container for the submit button-->
+            <!-- <a th:href="@{/index.html}" class="submit" > -->
+            <button class="sign-up-btn" type="submit">Sign Up</button>
+        </div>
+    
+        <div class="gogo"> <!--This is a sectionwith a label for going back-->
+            <a th:href="@{/}" class="label">
+                <h2 class="WhiteText">Back</h2>
+            </a>
+        </div>
+    </div>
+    </form>
+
+    <script th:src="@{/js/signup.js}"></script> <!--This links to an external Javascript file-->
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <title>Study Smartly</title>
+
+</head>
+
+<body>
+
+    <div class='Fade'> </div>
+    <div class="fit-screendo">
+
+        <canvas id="rainCanvas"></canvas>
+        <audio id="rainSound" loop>
+            <source src="media/audio/578599__auwenngebleau__slow-rain.m4a" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <span class="left-panel">
+        <nav class="navbar">
+            <ul className="nav-list">
+                <li class="nav-item">
+                    <a  th:href = "@{/logout}">
+                        <button class="login-button" id="loginButton">Log out</button>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </span>
+    <div class="toCenter">
+        <div class="OpSqure">
+            <div title="Keep focus." class="Topic" id="Modeo">
+                POMODORO
+            </div>
+            <div class="center-container toRow">
+                <div class="WhiteText">
+                    <p>Focus</p>
+                </div>
+                <div class="WhiteGaugeborder">
+                </div>
+                <div class="WhiteGauge">
+                    <div class="GreenGauge" id="progress-bar" alt="Keep Focus"></div>
+                </div>
+                <div class="WhiteText">
+                    <p>Break</p>
+                </div>
+            </div>
+            <div class="bigTimer" id="timer">
+
+            </div>
+            <div class="center-container Tocolumn">
+                <div class="underline"></div>
+                <div class="Whitealign"><a href="#" id="changeTimerLink">Change Timer</a></div>
+            </div>
+            <button class="start-btn" id="toggleButton">Start</button>
+            <button class="reset-btn" id="resetButton">Reset</button>
+        </div>
+        <div class="input-fields" style="display: none;">
+            <div class="WhiteText EditTitle">FOCUS TIME</div>
+            <div class="FocusTime">
+                <input class="TimeInput" type="number" id="hourInput" placeholder="Hours">
+                <div class="colon WhiteText">:</div>
+                <input class="TimeInput" type="number" id="minuteInput" placeholder="Minutes">
+                <div class="colon WhiteText">:</div>
+                <input class="TimeInput" type="number" id="secondInput" placeholder="Seconds">
+            </div>
+            <div class="WhiteText EditTitle">BREAK TIME</div>
+            <div class="BreakTime">
+                <input class="TimeInput" type="number" id="Breakhour" placeholder="Hours">
+                <div class="colon WhiteText">:</div>
+                <input class="TimeInput" type="number" id="Breakminute" placeholder="Minutes">
+                <div class="colon WhiteText">:</div>
+                <input class="TimeInput" type="number" id="Breaksecond" placeholder="Seconds">
+            </div>
+            <div class="three-btn">
+                <button title="Cancel" class="italic-btn"id="cancelButton">Cancel</button>
+                <button title="Don't forget to save." class="bold-btn"id="saveButton">Save</button>
+                <button title="25:00 and 05:00" class="italic-btn"id="defaultButton">Default</button>
+            </div>
+            <h6 class="WhiteText"> *** If you're not input any numbers, They will be 0 as default. ***</h6>
+        </div>
+    </div>
+
+    <div class="Realtime">
+        <div class="Realtime-container">
+            <div class="WhiteText bigTimerRight" id="rTime"></div>
+            <div class="WhiteText smalltimezone" id="Timezone"></div>
+            <div class="WhiteText" id="dmy"></div>
+        </div>
+    </div>
+    <div class="Musicplayer">
+        <div class="Musicplayer-container">
+
+            <div class="musicinfo WhiteText">
+                <p class="Nowplay">Now playing</p>
+                <h2 id="SongName">Welcome School lofi mix</h2>
+                <p class="owner" id="OwnName" >Blue Archive</p>
+                <audio id="audio">
+                    <source id="musicSource" src="../media/audio/WelcomeSchool.mp3" type="audio/mpeg" allow="autoplay">
+                </audio>
+                <div class="audioProcess">
+                    <div class="Processin" id="musicprocess"></div>
+                </div>
+                <div class="AudTimer">
+                    <div class="AudProc WhiteText" id="AudProcess"> 00:00</div>
+                    <div class="AudLen WhiteText" id="AudLength"> 00:00</div>
+                </div>
+            </div>
+            <div class="musiccover">
+                <img src="../media/img/ShirokoTerror.png" alt="Blue Archive" id="MusicCover" draggable="false">
+            </div>
+        </div>
+    </div>
+
+    <div class="Controller center-container">
+        <div class="Controller-left">
+
+            <div class="ChangePageContent">
+                <ul>
+                    <li class="list active">
+                        <a th:href="@{/}">
+                            <div class="Changer"></div>
+                            <img type="หน้าเดิม" src="media/ico/GreenTimer.png" id="TimerPage" draggable="false">
+                        </a>
+                    </li>
+                    
+                    <li class="list">
+                        <a th:href ="@{/todolists}">
+                        <div class="Changer"></div>
+                        <img type="หน้าTodo" src="media/ico/WhiteTodo.png" id="TodoPage" draggable="false">
+                        </a>
+
+                    </li>
+                    <li class="list">
+                        <a th:href ="@{/topics}">
+                        <div class="Changer"></div>
+                        <img type="หน้าQuiz" src="media/ico/WhiteQuiz.png" id="QuizPage" draggable="false">
+                        </li>
+                    </li>
+                    <li class="list">
+                        <a th:href="@{/history}">
+                        <div class="Changer"></div>
+                        <img type="หน้าStat" src="media/ico/WhiteStat.png" id="StatPage" draggable="false">
+                    </a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="SepLine">
+                <div class="SepLine1"></div>
+                <div class="SepLine2"></div>
+                <div class="SepLine3"></div>
+            </div>
+
+        </div>
+        <div class="Controller-right">
+            <ul>
+                <li>
+                    <span class="icon" onclick="toggleRain()">
+                        <img src="media/ico/animation-on.png" id="Anima" draggable="false">
+
+                    </span>
+                </li>
+                <li>
+                    <span class="icon" id="audioa">
+                        <img src="media/ico/audio-off.png" id="audioimg" draggable="false">
+                    </span>
+
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <script th:src="@{/Components/music/Musicplayer.js}"></script>
+    <script th:src="@{/Components/realtime/Realtime.js}"></script>
+    <script th:src="@{/Components/rain/rain.js}"></script>
+    <script th:src="@{/Components/navigator-bar/Navigator-Bar.js}"></script>
+    <script th:src="@{/Components/account/account.js}"></script>
+    <script th:src="@{/Components/pomodoro/pomodoro.js}"></script>
+</body>
+
+</html>
