@@ -1,0 +1,1053 @@
+/*Sroll bar*/
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../media/img/background.jpg");
+  background-size: cover;
+  height: 100%;
+  min-width: 957px;
+  min-height: 624px;
+  width: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.left-panel {
+
+  width: 20%;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+.Topic {
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 100px;
+  margin-top: 40px;
+  font-size: 3.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.Fade {
+  position: absolute;
+  background-color: black;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.6) 100%);
+  height: 50%;
+  width: 100%;
+  top: 50%;
+}
+
+.toCenter {
+  text-align: center;
+}
+
+.navbar {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.nav-list {
+
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.nav-item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.login-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.60);
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+
+.WhiteGaugeborder {
+  position: absolute;
+
+  height: 20px;
+  width: 20%;
+  border-radius: 10px;
+  background-color: transparent;
+  display: flex;
+  margin-left: 25px;
+  margin-right: 25px;
+  box-shadow: 0px 0px 0px 3px white inset;
+
+
+}
+
+.WhiteGauge {
+  height: 20px;
+  width: 20%;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 25px;
+  margin-right: 25px;
+  overflow: hidden;
+}
+
+.GreenGauge {
+  height: 14px;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: '{filled}';
+  background-color: #3A746A;
+  border-radius: 15px;
+}
+
+.OpSqure {
+  position: absolute;
+  height: 75%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.input-fields {
+  position: absolute;
+  height: 75%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.center-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toRow {
+  flex-direction: row;
+}
+
+.bigTimer {
+  margin: 0px;
+  color: white;
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  flex-direction: row;
+}
+
+.bigTimerRight {
+  font-size: 40px;
+  margin-bottom: 0%;
+}
+
+
+
+
+
+
+.smalltimezone {
+  font-size: 10px;
+}
+
+.WhiteText {
+  color: white;
+}
+
+.Whitealign a {
+  color: white;
+  text-decoration: none;
+}
+
+.underline {
+  position: relative;
+  background-color: #3A746A;
+  height: 3px;
+  width: 250px;
+}
+
+.Tocolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.reset-btn {
+  margin-top: 50px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  color: white;
+}
+
+.start-btn {
+  margin-top: 50px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+.Realtime {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px 0px 0px 10px;
+  right: 0px;
+  top: 13%;
+  width: 23%;
+  height: 18%;
+  overflow: hidden;
+}
+
+.Realtime-container {
+  text-align: right;
+  margin-right: 12%;
+  margin-top: 5px;
+
+}
+
+
+.Musicplayer {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px 0px 0px 10px;
+  right: 0px;
+  top: 32%;
+  width: 23%;
+  height: 18%;
+  overflow: hidden;
+
+}
+
+.Controller {
+  position: absolute;
+  justify-content: space-between;
+  height: 7%;
+  width: 40%;
+  bottom: 2.5%;
+  left: 50%;
+  transform: translate(-50%);
+
+}
+
+.Controller-left {
+
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  height: 100%;
+  width: 65%;
+  left: 0%;
+  justify-content: space-around;
+
+
+}
+
+.Controller-right {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  height: 100%;
+  width: 30%;
+  right: 0%;
+  justify-content: space-around;
+}
+
+.Controller-right ul {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+  padding: 0%;
+  margin-top: 7px;
+
+}
+
+.Controller-right li {
+  cursor: pointer;
+  list-style: none;
+
+
+}
+
+.Controller-right ul li .icon img {
+  width: 40px;
+  height: 40px;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.Controller-left .ChangePageContent ul {
+
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0%;
+  margin-top: 3%;
+
+}
+
+.Controller-left .ChangePageContent ul li {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.Controller-left .ChangePageContent ul li img {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+.Musicplayer .Musicplayer-container .musiccover {
+  height: 100%;
+
+}
+
+.Musicplayer .Musicplayer-container .musiccover img {
+  display: flex;
+  position: relative;
+  height: 100px;
+  left: 6%;
+  top: 10%;
+
+}
+
+.Musicplayer .Musicplayer-container .musicinfo p {
+
+  margin: 0%;
+}
+
+.Musicplayer .Musicplayer-container .musicinfo h2 {
+  margin: 0%;
+  font-weight: 300;
+}
+
+.Musicplayer .Musicplayer-container .musicinfo {
+  position: absolute;
+  top: 5%;
+  margin-left: 40%;
+  margin-right: 40px;
+  font-size: smaller;
+  overflow: hidden;
+}
+
+.Musicplayer .Musicplayer-container {
+  text-align: left;
+  height: 100%;
+
+}
+
+.musicinfo .owner {
+  font-size: 10px;
+  text-align: end;
+}
+
+.audioProcess {
+  margin-top: 10px;
+  background-color: white;
+  height: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.Processin {
+  height: 5px;
+  width: 0%;
+  background-color: #3A746A;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #a3a3a3, #2c2c2c);
+}
+
+.fit-screendo {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.AudTimer {
+  font-size: 10px;
+}
+
+.Controller .Controller-left .SepLine {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+
+
+}
+
+.Controller .Controller-left .SepLine1 {
+  border-radius: 10px;
+  background-color: white;
+  height: 85%;
+  width: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.Controller .Controller-left .SepLine2 {
+  border-radius: 10px;
+  background-color: white;
+  height: 85%;
+  width: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.Controller .Controller-left .SepLine3 {
+  border-radius: 10px;
+  background-color: white;
+  height: 85%;
+  width: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ChangePageContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.AudTimer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(1).active  .Changer {
+  position: absolute;
+  background-color: white;
+  width: 23.5%;
+  height: 85%;
+  top: 7.5%;
+  border-radius: 10px 0px 0px 10px;
+  left: 1.5%;
+  transition: 0.3s;
+  
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(2).active  .Changer {
+  position: absolute;
+  background-color: white;
+  left: 0%;
+  width: 25%;
+  height: 85%;
+  top: 7.5%;
+  transition: 0.3s;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(3).active  .Changer {
+
+  position: absolute;
+  background-color: white;
+  width: 25%;
+  height: 85%;
+  top: 7.5%;
+  transition: 0.3s;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(4).active  .Changer {
+  position: absolute;
+  background-color: white;
+  width: 23.5%;
+  height: 85%;
+  top: 7.5%;
+  border-radius: 0px 10px 10px 0px;
+  right: 1.5%;
+  transition: 0.3s;
+}
+
+.EditTitle {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 25px;
+  font-weight: 500;
+}
+.FocusTime, .BreakTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.ChangePageContent ul li a img{
+  z-index: 1;
+
+}
+.colon{
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 30px;
+  font-weight: 500;
+}
+.FocusTime input[type=number], .BreakTime input[type=number]{
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  border: 3px solid white;
+  border-radius: 10px;
+  width: 8%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  background-color: transparent;
+}
+.FocusTime input[type=number]::placeholder, .BreakTime input[type=number]::placeholder{
+  text-align: center;
+  color: white;
+}
+
+.FocusTime input[type=number]:focus, .BreakTime input[type=number]:focus{
+  font-size: 20px;
+  text-align: center;
+  color: white;
+  outline: none;
+  border: 4px solid white;
+  transition: 0.3s;
+}
+.FocusTime input[type=number]:focus::placeholder, .BreakTime input[type=number]:focus::placeholder{
+  color: rgb(128, 128, 128);
+}
+
+.three-btn{
+  margin-top: 50px;
+  
+  
+}
+.three-btn .italic-btn, .three-btn .bold-btn{
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.italic-btn{
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.italic-btn:hover{
+  background: white;
+  color: black;
+  border:none;
+  transition: 0.3s;
+}
+.bold-btn:hover{
+  border: 4px solid white;
+  transition: 0.3s;
+}
+
+@media (max-width: 1485px) {
+  .musiccover {
+      display: none;
+  }
+
+  .Musicplayer .Musicplayer-container .musicinfo {
+      margin-top: 3%;
+      margin-left: 10%;
+  }
+
+}
+
+@media (max-width: 1194px) {
+  .Musicplayer .Musicplayer-container .musicinfo .Nowplay {
+
+      display: none;
+  }
+
+}
+
+/*Scroll bar*/
+::-webkit-scrollbar {
+
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  transition: 0.8s;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #01776B;
+  transition: 0.8s;
+}
+/* This is content container */
+.content-center-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.c-divine-line {
+  height: 85%;
+  width: 2px;
+  background-color: white;
+  margin-top: 5%;
+  box-shadow: inset;
+}
+
+.c-left {
+  height: inherit;
+  width: 40%;
+}
+
+.c-right {
+  height: inherit;
+  width: 60%;
+}
+/*This is all about left content*/
+.category-name {
+  margin-top: 7%;
+  font-size: 20px;
+  font-weight: 750;
+}
+.slide-white-screen-left {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 3px solid white;
+  width: 90%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.btn-new-topic {
+  margin-top: 5%;
+  width: 80%;
+  height: 8%;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.btn-new-topic:hover {
+  margin-top: 5%;
+  width: 80%;
+  height: 8%;
+  border-radius: 10px;
+  border: 2px solid white;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  transition: 0.5s;
+}
+/* inside scrollbar*/
+.slide-white-screen-left .forslide .quiz-topic {
+  display: flex;
+  color: white;
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid white;
+  height: 12%;
+  width: 80%;
+  
+  overflow: hidden;
+  transition: 0.5s;
+}
+.slide-white-screen-left .forslide .quiz-topic a {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.slide-white-screen-left .forslide .quiz-topic:hover {
+  background-color: white;
+  transition: 0.5s;
+}
+.slide-white-screen-left .forslide .quiz-topic:hover a {
+  color: black;
+  transition: 0.5s;
+}
+
+.slide-white-screen-left .forslide {
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+}
+
+.slide-white-screen-left .forslide .quiz-topic a {
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+  color: white;
+}
+
+.quiz-name-set {
+  height: 100%;
+  width: 10%;
+
+  background-color: transparent;
+  border-radius: 10px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.quiz-name-set .quiz-edit-btn {
+  height: 100%;
+  width: 100%;
+  color: transparent;
+  border: none;
+  background: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.quiz-name-set .quiz-delete-btn {
+  height: 100%;
+  width: 100%;
+  color: transparent;
+  border: none;
+  background: transparent;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.slide-white-screen-left .forslide .quiz-topic .quiz-name-set:hover {
+  width: 20%;
+  transform: translateX(0%);
+  transition: 0.5s;
+}
+
+.slide-white-screen-left
+  .forslide
+  .quiz-topic
+  .quiz-name-set:hover
+  .quiz-edit-btn {
+  color: white;
+  background-color: #01776b;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.slide-white-screen-left
+  .forslide
+  .quiz-topic
+  .quiz-name-set:hover
+  .quiz-delete-btn {
+  color: white;
+  background-color: red;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+
+.Change-topic-name {
+  display: none;
+}
+
+input.Change-topic-name {
+  background: transparent;
+  text-align: center;
+  border: none;
+  width: 100%;
+  color: white;
+}
+
+input.Change-topic-name:hover {
+  color: black;
+}
+
+input.Change-topic-name:focus {
+  outline: none;
+}
+
+.forslide li.forclone {
+  display: none;
+}
+/*This is answer for question*/
+.choice-for-question {
+  margin-top: 5%;
+  margin-right: auto;
+}
+
+.answer-container {
+  width: 100%;
+}
+.answer-container .choice-answer {
+  width: 60%;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 2px dotted white;
+  height: 100%;
+  color: white;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.answer-container .choice-answer {
+  width: 60%;
+  background-color: transparent;
+  outline: none;
+  border-radius: 10px;
+  border: 2px dotted white;
+  height: 25px;
+  margin-bottom: 5px;
+}
+.editQuestion {
+  margin-top: 10%;
+  height: 94.4%;
+}
+
+.question-number {
+  margin-left: 5%;
+  text-align: left;
+  margin-bottom: 5%;
+}
+
+.Questioninputhere {
+  color: white;
+  background-color: transparent;
+  border-radius: 10px;
+  height: 50px;
+  width: 80%;
+  border: 2px solid white;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.Questioninputhere:focus {
+  outline: none;
+}
+.Questioninputhere::placeholder {
+  color: white;
+  transition: 0.5s;
+}
+.Questioninputhere:focus::placeholder {
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+
+.Add-btn,
+.Remove-btn {
+  margin-top: 5%;
+  background-color: transparent;
+  outline: none;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid white;
+  cursor: pointer;
+  padding: 2%;
+  transition: 0.5s;
+}
+
+.Add-btn:hover {
+  background-color: #01776b;
+  transition: 0.5s;
+}
+.Remove-btn:hover {
+  color: black;
+  background-color: #f8ce92;
+  transition: 0.5s;
+}
+
+.plus-btn img {
+  height: 25px;
+  width: 25px;
+}
+
+.plus-btn:hover img {
+  transform: rotate(90deg);
+  transition: 0.5s;
+}
+
+.plus-btn {
+  margin-top: 5%;
+  background-color: transparent;
+  border: transparent;
+  cursor: pointer;
+}
+.QuestionNamed {
+  cursor: pointer;
+}
+
+.Qustion-content {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  height: 90%;
+  width: 80%;
+}
+
+.green {
+  color: #01776b;
+}
+
+.mini-text {
+  display: flex;
+}
+
+.num-padding {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.Question {
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 4%;
+}
+
+.allChoice {
+  height: auto;
+  width: 100%;
+}
+
+.Choice {
+  text-align: start;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  display: block;
+  color: white;
+  border: 3px solid white;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.5s;
+  padding: 10px;
+}
+
+.Choice.checked {
+  color: black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.Choice:hover {
+  color: black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.Choice input {
+  position: absolute;
+  display: none;
+}
+
+.Option-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Option-info .texto {
+  position: relative;
+  width: inherit;
+  height: inherit;
+  text-overflow: hide;
+  padding-right: 10%;
+  margin: 0%;
+}
+
+.CheckedShow {
+  text-align: end;
+  position: relative;
+  right: 5%;
+  font-weight: 500;
+  font-size: larger;
+  display: none;
+  color: green;
+  margin: 0%;
+  z-index: +1;
+}
+
+.nextandback {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nextandback a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Descripbox {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  height: 65%;
+  width: 85%;
+  border: 3px solid white;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 15%;
+  color: white;
+  transition: 0.5s;
+}

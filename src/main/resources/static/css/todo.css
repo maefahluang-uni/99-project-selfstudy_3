@@ -1,0 +1,706 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("../media/img/background.jpg");
+  background-size: cover;
+  height: 100%;
+  min-width: 957px;
+  min-height: 624px;
+  width: 100%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.left-panel {
+
+  width: 20%;
+  padding: 10px;
+  justify-content: flex-start;
+}
+
+
+.Fade {
+  position: absolute;
+  background-color: black;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(0, 0, 0, 0.6) 100%);
+  height: 50%;
+  width: 100%;
+  top: 50%;
+}
+
+.toCenter {
+  text-align: center;
+}
+
+.navbar {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.nav-list {
+
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.nav-item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.login-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.60);
+  color: white;
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+
+
+.OpSqure {
+  position: absolute;
+  height: 75%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  padding: 0.5%;
+}
+
+.center-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toRow {
+  flex-direction: row;
+}
+
+
+.bigTimerRight {
+  font-size: 40px;
+  margin-bottom: 0%;
+}
+
+.smalltimezone {
+  font-size: 10px;
+}
+
+.WhiteText {
+  color: white;
+}
+
+
+.content-container {
+  height: 100%;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.Tocolumn {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.Realtime {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px 0px 0px 10px;
+  right: 0px;
+  top: 13%;
+  width: 23%;
+  height: 18%;
+  overflow: hidden;
+}
+
+.Realtime-container {
+  text-align: right;
+  margin-right: 12%;
+  margin-top: 5px;
+
+}
+
+
+.Musicplayer {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px 0px 0px 10px;
+  right: 0px;
+  top: 32%;
+  width: 23%;
+  height: 18%;
+  overflow: hidden;
+
+}
+
+.Controller {
+  position: absolute;
+  justify-content: space-between;
+  height: 7%;
+  width: 40%;
+  bottom: 2.5%;
+  left: 50%;
+  transform: translate(-50%);
+
+}
+
+.Controller-left {
+
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  height: 100%;
+  width: 65%;
+  left: 0%;
+  justify-content: space-around;
+
+
+}
+
+.Controller-right {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  height: 100%;
+  width: 30%;
+  right: 0%;
+  justify-content: space-around;
+}
+
+.Controller-right ul {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-around;
+  padding: 0%;
+  margin-top: 7px;
+
+}
+
+.Controller-right li {
+  cursor: pointer;
+  list-style: none;
+
+
+}
+
+.Controller-right ul li .icon img {
+  width: 40px;
+  height: 40px;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.Controller-left .ChangePageContent ul {
+
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0%;
+  margin-top: 3%;
+
+}
+
+.Controller-left .ChangePageContent ul li {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.Controller-left .ChangePageContent ul li img {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  z-index: 1;
+}
+
+.Musicplayer .Musicplayer-container .musiccover {
+  height: 100%;
+
+}
+
+.Musicplayer .Musicplayer-container .musiccover img {
+  display: flex;
+  position: relative;
+  height: 100px;
+  left: 6%;
+  top: 10%;
+
+}
+
+.Musicplayer .Musicplayer-container .musicinfo p {
+
+  margin: 0%;
+}
+
+.Musicplayer .Musicplayer-container .musicinfo h2 {
+  margin: 0%;
+  font-weight: 300;
+}
+
+.Musicplayer .Musicplayer-container .musicinfo {
+  position: absolute;
+  top: 5%;
+  margin-left: 40%;
+  margin-right: 40px;
+  font-size: smaller;
+  overflow: hidden;
+}
+
+.Musicplayer .Musicplayer-container {
+  text-align: left;
+  height: 100%;
+
+}
+
+.musicinfo .owner {
+  font-size: 10px;
+  text-align: end;
+}
+
+.audioProcess {
+  margin-top: 10px;
+  background-color: white;
+  height: 5px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.Processin {
+  height: 5px;
+  width: 0%;
+  background-color: #3A746A;
+  border-radius: 10px;
+  position: absolute;
+}
+
+.canvas {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, #a3a3a3, #2c2c2c);
+}
+
+.fit-screendo {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.AudTimer {
+  font-size: 10px;
+}
+
+.Controller .Controller-left .SepLine {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: space-evenly;
+
+
+}
+
+.Controller .Controller-left .SepLine1 {
+  border-radius: 10px;
+  background-color: white;
+  height: 85%;
+  width: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.Controller .Controller-left .SepLine2 {
+  border-radius: 10px;
+  background-color: white;
+  height: 85%;
+  width: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.Controller .Controller-left .SepLine3 {
+  border-radius: 10px;
+  background-color: white;
+  height: 85%;
+  width: 2px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ChangePageContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.AudTimer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 10%;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(1).active .Changer {
+  position: absolute;
+  background-color: white;
+  width: 23.5%;
+  height: 85%;
+  top: 7.5%;
+  border-radius: 10px 0px 0px 10px;
+  left: 1.5%;
+  transition: 0.3s;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(2).active .Changer {
+  position: absolute;
+  background-color: white;
+  width: 25%;
+  height: 85%;
+  top: 7.5%;
+  transition: 0.3s;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(3).active .Changer {
+  position: absolute;
+  background-color: white;
+  width: 25%;
+  height: 85%;
+  top: 7.5%;
+
+  transition: 0.3s;
+}
+
+.Controller-left .ChangePageContent ul li:nth-child(4).active .Changer {
+  position: absolute;
+  background-color: white;
+  width: 23.5%;
+  height: 85%;
+  top: 7.5%;
+  border-radius: 0px 10px 10px 0px;
+  right: 1.5%;
+  transition: 0.3s;
+}
+
+@media (max-width: 1485px) {
+  .musiccover {
+      display: none;
+  }
+
+  .Musicplayer .Musicplayer-container .musicinfo {
+      margin-top: 3%;
+      margin-left: 10%;
+  }
+
+}
+
+@media (max-width: 1194px) {
+  .Musicplayer .Musicplayer-container .musicinfo .Nowplay {
+
+      display: none;
+  }
+
+}
+
+/*todo*/
+.delete-task-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+
+.todo-list {
+  width: 50%;
+  height: 30% auto;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  border-radius: 5px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.todo-list.backg {
+  position: absolute;
+  height: 75%;
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.60);
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.todays-tasks {
+  color: #ffffff;
+}
+
+/* Assuming this is within your list.css file */
+.todays-tasks h2 {
+  font-weight: bold;
+  /* This makes the "Today" text bolder */
+}
+
+.task {
+  font-weight: 700;
+  /* This makes the task text bolder */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.add-task {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.add-task input {
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+#new-task {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  width: 80%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  max-height: 320px;
+  overflow-y: scroll;
+}
+
+.modal input,
+.modal select,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn-group button {
+  margin-left: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+.header button {
+  margin-left: 10px;
+}
+
+
+.canvas {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #a3a3a3, #2c2c2c);
+}
+
+label {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  font-weight: bold;
+  margin-top: 10px;
+
+}
+
+/*For Todo table*/
+Table.ShowTodoTable {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border: 2px solid white;
+  border-collapse: collapse;
+
+}
+
+Table.ShowTodoTable th {
+
+  background-color: white;
+}
+
+Table.ShowTodoTable th td {
+  color: black;
+
+}
+
+Table.ShowTodoTable tr {
+  border-bottom: 1px solid white;
+}
+
+Table.ShowTodoTable tr td {
+  color: white;
+  padding: 1%;
+}
+
+.table-container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid white;
+}
+td.btn-intable-align{
+  display: flex ;
+  justify-content: space-evenly;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+td.btn-intable-align .table-btn{
+ 
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  margin-bottom: 3%;
+  transition: 0.5s;
+}
+
+td.btn-intable-align .table-btn:hover{
+  color: black;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.back-btn{
+  text-decoration: none;
+
+}
+
+.back-btn-container{
+  display: flex;
+  margin-top: 2.5%;
+  justify-content: space-evenly;
+  
+  
+  
+}
+
+.back-btn-container .back-btn:hover{
+  text-decoration: underline;
+
+}
+
+.add-todo-btn{
+  margin-top: 3%;
+}
+
+::-webkit-scrollbar {
+
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+  transition: 0.8s;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #01776B;
+  transition: 0.8s;
+}
