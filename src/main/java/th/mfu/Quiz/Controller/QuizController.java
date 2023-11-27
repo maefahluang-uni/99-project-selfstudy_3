@@ -58,7 +58,7 @@ public class QuizController {
     }
 
     @PostMapping("/topics/{id}/quiz")
-    public String quiz(Model model, @PathVariable Long id, @ModelAttribute Result result) {
+    public String Doquiz(Model model, @PathVariable Long id, @ModelAttribute Result result) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         String email = ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
@@ -74,7 +74,7 @@ public class QuizController {
     }
 
     @PostMapping("/topics/{id}/submit")
-    public String submit(@ModelAttribute QuestionForm qForm, Model model, @ModelAttribute Result result,
+    public String Quizsubmit(@ModelAttribute QuestionForm qForm, Model model, @ModelAttribute Result result,
             @PathVariable long id) {
         Topic topic = topicRepo.findById(id).get();
         Date date = new Date();
@@ -93,7 +93,7 @@ public class QuizController {
     }
 
     @GetMapping("/history")
-    public String score(Model m) {
+    public String listResult(Model m) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         String email = ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();

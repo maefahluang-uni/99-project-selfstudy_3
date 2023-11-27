@@ -53,7 +53,7 @@ public class TodoController {
     /// View each element via Ids ///
 
     @GetMapping("/todolists/{id}")
-    public String listTodo(Model model, @PathVariable long id) {
+    public String listTodoById(Model model, @PathVariable long id) {
         Todo todo = TodoRepo.findById(id).orElse(null);
         model.addAttribute("todo_view", todo);
         return "view-todo";
@@ -72,7 +72,7 @@ public class TodoController {
     /// End-Add ///
 
     @PostMapping("/todolists")
-    public String saveOrUpdateTask(@ModelAttribute Todo todo) {
+    public String saveOrUpdateTodo(@ModelAttribute Todo todo) {
         // Authentication authentication =
         // SecurityContextHolder.getContext().getAuthentication();
         // User currentUser = (User) authentication.getPrincipal();

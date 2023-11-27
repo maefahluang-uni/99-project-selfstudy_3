@@ -53,7 +53,7 @@ public class QuestionController {
     }
 
     @GetMapping("/topics/{topic_id}/add")
-    public String addATodoForm(Model model, @PathVariable Long topic_id) {
+    public String addAQuestionForm(Model model, @PathVariable Long topic_id) {
         Topic topic = TopicRepo.findById(topic_id).orElse(null);
 
         model.addAttribute("question", new Question());
@@ -64,7 +64,7 @@ public class QuestionController {
     }
 
     @PostMapping("/topics/{topic_id}")
-    public String saveOrUpdateTask(@ModelAttribute Question question, @PathVariable Long topic_id) {
+    public String saveOrUpdateQuestion(@ModelAttribute Question question, @PathVariable Long topic_id) {
         Topic topic = TopicRepo.findById(topic_id).get();
         question.setTopic(topic);
         questionRepo.save(question);
@@ -74,7 +74,7 @@ public class QuestionController {
     /// Edit ///
 
     @GetMapping("/topics/{topic_id}/{id}/edit")
-    public String editTodoForm(Model model, @PathVariable long topic_id, @PathVariable long id) {
+    public String editQuestionForm(Model model, @PathVariable long topic_id, @PathVariable long id) {
         Question existingQuestion = questionRepo.findById(id).orElse(null);
 
         if (existingQuestion == null) {
@@ -88,7 +88,7 @@ public class QuestionController {
     }
 
     @PostMapping("/topics/{topic_id}/{id}/edit")
-    public String editTodo(@PathVariable Long topic_id, @PathVariable Long id, @ModelAttribute Question question) {
+    public String editQuestion(@PathVariable Long topic_id, @PathVariable Long id, @ModelAttribute Question question) {
         Topic topic = TopicRepo.findById(topic_id).get();
         question.setTopic(topic);
         question.setId(id);
@@ -102,7 +102,7 @@ public class QuestionController {
 
     @Transactional
     @GetMapping("/topics/{topic_id}/delete/{id}")
-    public String deleteTodo(Model model, @PathVariable long topic_id, @PathVariable long id) {
+    public String deleteQuestion(Model model, @PathVariable long topic_id, @PathVariable long id) {
         questionRepo.deleteById(id);
         return "redirect:/topics/{topic_id}";
     }

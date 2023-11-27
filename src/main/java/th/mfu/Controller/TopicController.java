@@ -47,13 +47,13 @@ public class TopicController {
     // }
 
     @GetMapping("/topics/add")
-    public String addAConcertForm(Model model) {
+    public String addTopicForm(Model model) {
         model.addAttribute("topicform", new Topic());
         return "add-topic";
     }
 
     @PostMapping("/topics")
-    public String saveOrUpdateTask(@ModelAttribute Topic topic) {
+    public String saveOrUpdateTopic(@ModelAttribute Topic topic) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         String email = ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
@@ -64,7 +64,7 @@ public class TopicController {
     }
 
     @GetMapping("/topics/{id}/edit")
-    public String editTodoForm(@PathVariable long id, Model model) {
+    public String editTopicForm(@PathVariable long id, Model model) {
         Topic existingTopic = TopicRepo.findById(id).orElse(null);
 
         if (existingTopic == null) {
@@ -76,7 +76,7 @@ public class TopicController {
     }
 
     @PostMapping("/topics/{id}/edit")
-    public String editTodo(@PathVariable Long id, @ModelAttribute Topic topic) {
+    public String editTopic(@PathVariable Long id, @ModelAttribute Topic topic) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         Object principal = authentication.getPrincipal();
         String email = ((org.springframework.security.core.userdetails.UserDetails) principal).getUsername();
@@ -89,7 +89,7 @@ public class TopicController {
 
     @Transactional
     @GetMapping("/topics/delete/{id}")
-    public String deleteConcert(@PathVariable long id) {
+    public String deleteTopic(@PathVariable long id) {
         questionRepo.deleteAllByTopicid(id);
         TopicRepo.deleteById(id);
         return "redirect:/topics";
